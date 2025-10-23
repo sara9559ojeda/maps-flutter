@@ -145,6 +145,9 @@ class _MapScreenState extends State<MapScreen> {
       _selectionMarker = position;
     });
     _onLocationPicked?.call(position);
+    _showSnackBar(
+      'Ubicación seleccionada: ${position.latitude.toStringAsFixed(5)}, ${position.longitude.toStringAsFixed(5)}',
+    );
   }
 
   Future<void> _loadInitialData() async {
